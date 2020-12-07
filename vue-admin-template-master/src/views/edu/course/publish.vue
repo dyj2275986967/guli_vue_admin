@@ -57,7 +57,14 @@
 
       },
       publish(){
-        alert("success");
+  course.publishCourse(this.courseId)
+        .then(response=>{
+            this.$message({
+                 type: 'success',
+               message: "发布成功"
+                });
+            this.$router.push({path:'/course/list/'})
+        })
       }
     }
   }

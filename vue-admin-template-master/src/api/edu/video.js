@@ -38,6 +38,16 @@ export default{
           url: `/eduservice/edu-video/${videoId}`, 
           method: 'delete',
           })
+     },
+     //删除阿里云视频id
+     removeAlyVideo(id){
+        return request({
+            //可以用拼接字符串的方式传值
+        //url: '/eduservice/edu-course/addCourseInfo', 
+          url: `/eduvod/video/removeAlyVideo/${id}`, 
+          method: 'delete',
+          })
+
      }
 
 }

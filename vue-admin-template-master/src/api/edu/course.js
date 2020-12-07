@@ -54,5 +54,47 @@ export default{
     //把对象换成json 传到接口
       })
 },
+//课程信息最终发布
+publishCourse(id){
+  return request({
+      //可以用拼接字符串的方式传值
+  //url: '/eduservice/edu-course/getCourseInfoById', 
+    url: "/eduservice/edu-course/publishCourse/"+id, 
+    method: 'post',
+  //把对象换成json 传到接口
+    })
+},
+//查询全部课程信息
+getCourseList(){
+  return request({
+    //可以用拼接字符串的方式传值
+//url: '/eduservice/edu-course/getCourseInfoById', 
+  url: "/eduservice/edu-course/getCourseList/", 
+  method: 'get',
+//把对象换成json 传到接口
+  })
+},
+ //条件查询
+ pageCourseCondition(current,limit,courseQuery){
+  return request({
+    //可以用拼接字符串的方式传值
+//url: '/eduservice/edu-course/getCourseInfoById', 
+  url: `/eduservice/edu-course/pageCourseCondition/${current}/${limit}`, 
+  method: 'post',
+//把对象换成json 传到接口
+  data: courseQuery
+  })
+ },
+//根据课程id删除课程
+deleteCourseById(courseId){
+  return request({
+    //可以用拼接字符串的方式传值
+//url: '/eduservice/edu-course/getCourseInfoById', 
+  url: `/eduservice/edu-course/${courseId}`, 
+  method: 'delete',
+//把对象换成json 传到接口
+  })
+}
+
 }
 
